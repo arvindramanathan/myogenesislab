@@ -1,0 +1,7 @@
+/.quarto/
+/dist/
+/*.html
+.DS_Store
+
+**/*.quarto_ipynb
+/.openai/

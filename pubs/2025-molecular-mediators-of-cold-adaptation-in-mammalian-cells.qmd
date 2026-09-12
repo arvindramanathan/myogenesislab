@@ -1,0 +1,9 @@
+---
+title: "Molecular mediators of cold adaptation in mammalian cells"
+date: 2025-01-01
+year: 2025
+period: "Since 2019"
+categories: ["Cold adaptation", "Cold resilience"]
+---
+
+Dey P, Lal H, Saha P, Ramanathan A. *Communications Biology* 2025;8(1):1441.

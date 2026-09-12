@@ -1,0 +1,27 @@
+---
+title: "Metabolomics and lipidomics"
+subtitle: "Quantitative molecular phenotyping"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Metabolomics"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Mass-spectrometry metabolomics and lipidomics provide quantitative views of how cells and tissues
+allocate resources, respond to stress and change state. These measurements are central to our
+work on muscle regeneration, senescence, aging and environmental adaptation.
+
+## Integrated measurement
+
+Discovery and targeted measurements across cells, tissues and biofluids are interpreted alongside
+imaging, functional phenotyping and experimental perturbation. This integrated approach distinguishes
+molecular signatures that accompany a phenotype from metabolic changes that help drive it.
+
+## Publications
+
+::: {#listing-papers}
+:::

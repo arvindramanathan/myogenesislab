@@ -1,0 +1,23 @@
+---
+title: "Skin"
+subtitle: "Tissue resilience, metabolic regulation and the response to cold."
+listing:
+  id: skin-projects
+  contents:
+    - ../projects/hypothermia-mimetics-skin.qmd
+  type: default
+  sort: "title"
+  fields: [title, subtitle, description]
+---
+
+Skin is a renewing tissue and the body's first barrier to environmental stress. Its resilience
+depends on metabolic regulation, mitochondrial function and the capacity to recover while maintaining
+tissue renewal.
+
+Building on our published work in muscle, we are exploring how protective responses associated with
+mild cooling may support cellular resilience in skin. This emerging direction carries cold-response biology into broader questions of stress recovery and regeneration.
+
+## Current research
+
+::: {#skin-projects}
+:::

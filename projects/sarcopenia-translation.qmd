@@ -1,0 +1,26 @@
+---
+title: "Sarcopenia and precision medicine"
+subtitle: "Muscle regeneration, aging and senescence"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Sarcopenia"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Sarcopenia is biologically heterogeneous: similar losses in strength or muscle mass may arise from
+different cellular and metabolic changes. We pair human cohort measurements with bioengineered muscle models, so that molecular signatures can be read against functional decline.
+
+## Multiplexed functional models
+
+Multiplexed assays report contractile force, quantitative imaging and molecular outcomes together to model
+sarcopenia and examine differential responses relevant to precision medicine. The aim is to define
+mechanistically informative phenotypes rather than treating sarcopenia as a single biological state.
+
+## Publications
+
+::: {#listing-papers}
+:::

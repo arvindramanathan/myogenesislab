@@ -1,0 +1,8 @@
+---
+title: "High-density polymerase-mediated incorporation of fluorochrome-labeled nucleotides"
+date: 2005-01-01
+year: 2005
+period: "Earlier research"
+---
+
+Ramanathan A, Pape L, Schwartz DC. *Analytical Biochemistry* 2005;337(1):1–11.

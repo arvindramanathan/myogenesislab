@@ -1,0 +1,9 @@
+---
+title: "Large-scale chemical dissection of mitochondrial function"
+date: 2008-01-01
+year: 2008
+period: "Earlier research"
+categories: ["Methods"]
+---
+
+Wagner BK, Kitami T, Gilbert TJ, Peck D, Ramanathan A, Schreiber SL, et al. *Nature Biotechnology* 2008;26(3):343–351. *(corrigendum: *Nat Biotechnol* 2008;26(7):831)*

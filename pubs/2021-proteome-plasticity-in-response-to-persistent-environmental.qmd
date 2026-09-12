@@ -1,0 +1,9 @@
+---
+title: "Proteome plasticity in response to persistent environmental change"
+date: 2021-01-01
+year: 2021
+period: "Since 2019"
+categories: ["Cold adaptation", "Cold resilience"]
+---
+
+Domnauer M, Zheng F, Li L, Zhang Y, Chang CE, Unruh JR, et al. *Molecular Cell* 2021;81(16):3294–3309.e12.

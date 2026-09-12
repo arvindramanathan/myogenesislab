@@ -1,0 +1,8 @@
+---
+title: "Multilevel regulation of growth rate in yeast revealed using systems biology"
+date: 2007-01-01
+year: 2007
+period: "Earlier research"
+---
+
+Ramanathan A, Schreiber SL. *Journal of Biology* 2007;6(2):3.

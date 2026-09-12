@@ -1,0 +1,9 @@
+---
+title: "Integrative analysis of plasma small-molecule and gut-microbiome markers of sarcopenia in a pilot study within an Indian cohort"
+date: 2026-01-01
+year: 2026
+period: "Since 2019"
+categories: ["Sarcopenia", "Metabolomics", "Muscle and aging"]
+---
+
+Hashmi MA, Verma S, Math RGH, Muralidharan S, Pranesh G, et al. *Scientific Reports* 2026;16(1):5602.

@@ -1,0 +1,8 @@
+---
+title: "A novel AhR ligand, 2AI, protects the retina from environmental stress"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+---
+
+Gutierrez MA, Davis SS, Rosko A, Nguyen SM, Mitchell KP, Mateen S, et al. *Scientific Reports* 2016;6(1):29025.

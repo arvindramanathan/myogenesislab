@@ -1,0 +1,27 @@
+---
+title: "Label-free Raman imaging"
+subtitle: "Spatial analysis of cellular chemistry"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Raman imaging"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Label-free Raman imaging maps chemical variation within cells and tissues without relying on
+molecular labels. Quantitative analysis links spatial spectral patterns to metabolic state and
+cellular phenotype.
+
+## Spatial molecular phenotyping
+
+In muscle and senescence models, Raman imaging complements microscopy and mass-spectrometry
+measurements by retaining spatial information. Public analysis code and reproducible workflows will
+be linked when released.
+
+## Journal publications
+
+::: {#listing-papers}
+:::

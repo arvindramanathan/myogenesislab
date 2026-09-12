@@ -1,0 +1,8 @@
+---
+title: "The M2 splice isoform of pyruvate kinase is important for cancer metabolism and tumour growth"
+date: 2008-01-01
+year: 2008
+period: "Earlier research"
+---
+
+Christofk HR, Vander Heiden MG, Harris MH, Ramanathan A, et al. *Nature* 2008;452(7184):230–233.

@@ -1,0 +1,26 @@
+---
+title: "Cold-response biology in skin"
+subtitle: "Cold and cellular resilience"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Cold adaptation"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+We study whether protective cold-response programmes, including RBM3-associated pathways, can
+be engaged without sustained cooling. In skin models, we examine how these responses relate to
+mitochondrial function, stress tolerance and regenerative capacity.
+
+## Research context
+
+This direction builds on our published studies of cellular and muscle adaptation to mild
+hypothermia. Compound identities, screening designs and development details are not disclosed.
+
+## Related publications
+
+::: {#listing-papers}
+:::

@@ -1,0 +1,950 @@
+/*-- scss:defaults --*/
+// Ramanathan Lab — Quarto theme.
+
+// ---- Colour: near-black on warm off-white, ONE accent ----
+$ink:        #14181d;
+$ink-mid:    #4a545e;
+$ink-soft:   #7b858f;
+$paper:      #fbfaf8;
+$paper-alt:  #f4f2ee;
+$rule:       #e2ded7;
+$accent:     #1a4d5c;
+$accent-soft:#e8f0f1;
+
+$body-bg:     $paper;
+$body-color:  $ink;
+$link-color:  $accent;
+$link-hover-color: darken($accent, 10%);
+$border-color: $rule;
+
+// ---- Type: one restrained sans-serif family ----
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family:   "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-root:  17px;
+$line-height-base: 1.65;
+$headings-font-weight: 600;
+$headings-line-height: 1.2;
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.375rem;
+$h4-font-size: 1.0625rem;
+
+// ---- Kill the things that make Bootstrap look like Bootstrap ----
+$border-radius:    2px;
+$border-radius-sm: 2px;
+$border-radius-lg: 2px;
+$box-shadow:       none;
+$box-shadow-sm:    none;
+$box-shadow-lg:    none;
+$enable-shadows:   false;
+$enable-gradients: false;
+
+// ---- Navbar / footer ----
+$navbar-bg:          rgba(251, 250, 248, 0.94);
+$navbar-fg:          $ink-mid;
+$navbar-hl:          $ink;
+$footer-bg:          $paper;
+$footer-fg:          $ink-soft;
+
+/*-- scss:rules --*/
+
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+// full-bleed blocks use 100vw, which includes the scrollbar — clip the few px it overhangs
+html, body { overflow-x: hidden; max-width: 100%; }
+
+h1, h2, h3, h4 { letter-spacing: -0.015em; text-wrap: balance; }
+h1 { margin-bottom: 1.5rem; }
+h2 { margin-top: 3rem; margin-bottom: 1rem; }
+
+p, li { max-width: 68ch; }
+
+// Lead paragraph — the sentence under a page title
+.subtitle, p.lead {
+  font-family: $headings-font-family;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  color: $ink-mid;
+}
+
+// Small-caps label
+.eyebrow {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.11em;
+  text-transform: uppercase; color: $ink-soft; margin-bottom: 1rem;
+}
+
+// ---- Navbar: hairline, not a slab ----
+.navbar {
+  border-bottom: 1px solid $rule;
+  backdrop-filter: saturate(180%) blur(10px);
+  padding-block: 0.75rem;
+}
+.navbar-brand { font-family: $headings-font-family; font-weight: 600; font-size: 1.0625rem; }
+.navbar-nav .nav-link { font-size: 0.875rem; }
+
+// The full-layout homepage should read as one continuous masthead, not a
+// Quarto document with a hero inserted below the default content inset.
+#quarto-content.page-layout-full #quarto-document-content {
+  margin: 0;
+  padding: 0;
+}
+body:has(#quarto-content.page-layout-full) .navbar {
+  background: $ink;
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+body:has(#quarto-content.page-layout-full) .navbar-brand {
+  color: #fff;
+  font-size: 1.2rem;
+}
+body:has(#quarto-content.page-layout-full) .navbar-nav .nav-link,
+body:has(#quarto-content.page-layout-full) .aa-SubmitIcon {
+  color: rgba(255,255,255,.78);
+}
+body:has(#quarto-content.page-layout-full) .navbar-nav .nav-link:hover,
+body:has(#quarto-content.page-layout-full) .navbar-nav .nav-link:focus,
+body:has(#quarto-content.page-layout-full) .aa-SubmitIcon:hover {
+  color: #fff;
+}
+
+// ---- Listings: strip the card look ----
+.quarto-listing { margin-top: 1.5rem; }
+.quarto-post {
+  border-bottom: 1px solid $rule;
+  padding: 1.25rem 0;
+  gap: 1.5rem;
+}
+.quarto-post .listing-title {
+  font-family: $headings-font-family;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+.quarto-post .listing-subtitle,
+.quarto-post .listing-description { font-size: 0.9375rem; color: $ink-mid; }
+.quarto-post .listing-date {
+  font-size: 0.875rem; color: $ink-soft;
+  font-variant-numeric: tabular-nums;
+}
+.card { border: 1px solid $rule !important; box-shadow: none !important; }
+
+.quarto-post .metadata:empty { display: none; }
+.quarto-post.image-right { display: block; }
+.quarto-post .body { padding-right: 0; }
+.listing-description { margin-top: 0.5rem; }
+
+// Document-level categories are internal machinery (arm-1, tissue-muscle, slugs) — never shown
+.quarto-title .quarto-categories { display: none; }
+
+// ---- Category chips ----
+.quarto-category, .listing-category {
+  background: $accent-soft !important;
+  color: $ink-mid !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: 0.04em;
+  padding: 3px 9px !important;
+  text-transform: none;
+}
+
+// ---- Tables ----
+table { font-size: 0.9375rem; }
+thead th {
+  font-family: $font-family-sans-serif;
+  font-size: 0.6875rem; letter-spacing: .08em; text-transform: uppercase;
+  color: $ink-soft; font-weight: 500;
+}
+td, th { border-bottom: 1px solid $rule; vertical-align: top; }
+
+// ---- Figures ----
+figure { margin: 3rem 0; }
+figure img { border: 1px solid $rule; }
+figcaption { font-size: 0.875rem; color: $ink-soft; margin-top: 0.75rem; max-width: 68ch; }
+
+// Project pages lead with an argument and status, rather than a form-like
+// stack of generic section headings.
+.project-deck {
+  max-width: 46ch;
+  margin: 1.5rem 0 2rem;
+  font-family: $headings-font-family;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.38;
+  color: $ink-mid;
+}
+.project-meta {
+  display: grid;
+  grid-template-columns: minmax(8rem, .55fr) minmax(18rem, 1.45fr);
+  gap: 1.5rem;
+  max-width: 58rem;
+  margin: 0 0 3rem;
+  padding: 1.25rem 0;
+  border-block: 1px solid $rule;
+  font-size: .875rem;
+  color: $ink-mid;
+}
+.project-meta p { margin: 0; }
+.project-meta strong {
+  display: inline-block;
+  margin-bottom: .25rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+// ---- Callout used for the disclosure warnings ----
+.callout { border-radius: 2px; }
+
+// ---- People grid ----
+.people-photo {
+  width: 100vw;
+  margin: 0 0 4rem calc(50% - 50vw);
+}
+.people-photo p { margin: 0; max-width: none; }
+.people-photo img {
+  width: 100%;
+  max-height: 40rem;
+  object-fit: cover;
+  // anchor near the top: the back row's heads sit at the very top of the frame and
+  // a centred crop decapitates them
+  object-position: center 14%;
+  border: 0;
+  display: block;
+}
+.people-photo-caption {
+  max-width: 58rem;
+  margin: .9rem auto 0;
+  padding-inline: 2rem;
+  font-size: .8125rem;
+  color: $ink-soft;
+}
+
+.people-intro {
+  max-width: 58rem;
+  margin: 0 0 4.5rem;
+  padding: 1.5rem 0 1.75rem;
+  border-block: 1px solid $rule;
+}
+.people-intro h2 {
+  margin: 0 0 .8rem;
+  font-family: $font-family-sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: $accent;
+}
+.people-intro h3 { margin: 0 0 .35rem; }
+.people-intro p { margin: 0; color: $ink-mid; }
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 3rem 2rem;
+  margin: 2rem 0 5.5rem;
+}
+.person {
+  min-height: 6.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid $rule;
+}
+.person img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  background: $paper-alt; border: 1px solid $rule;
+  margin-bottom: 0.75rem; filter: grayscale(12%);
+}
+.person h3 { font-family: $font-family-sans-serif; font-size: 1.0625rem; margin-bottom: 2px; }
+.person .role {
+  font-size: 0.75rem; letter-spacing: .06em; text-transform: uppercase;
+  color: $ink-soft; margin-bottom: 0.5rem;
+}
+.person p { font-size: 0.9375rem; color: $ink-mid; }
+
+.alumni-table-wrap {
+  margin: 2rem 0 4rem;
+  overflow-x: auto;
+  border-top: 2px solid $ink;
+}
+.alumni-table-wrap table {
+  width: 100%;
+  margin: 0;
+  font-size: .9rem;
+}
+.alumni-table-wrap thead th {
+  padding: .9rem .75rem;
+  border-bottom: 1px solid $ink;
+  font-size: .67rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: $ink-soft;
+}
+.alumni-table-wrap tbody td {
+  padding: 1rem .75rem;
+  border-bottom: 1px solid $rule;
+  vertical-align: top;
+}
+.alumni-table-wrap tbody td:first-child { width: 21%; }
+.alumni-table-wrap tbody td:nth-child(2) { width: 19%; color: $ink-mid; }
+
+// ---- Footer ----
+.nav-footer {
+  border-top: 1px solid $rule;
+  font-size: 0.875rem;
+  color: $ink-soft;
+  padding-block: 3rem;
+}
+
+// ---- Print (people do print publication lists) ----
+@media print {
+  .navbar, .nav-footer { display: none; }
+  body { background: #fff; font-size: 11pt; }
+}
+
+// =====================================================================
+//  HOME PAGE — full-bleed hero, evidence strip, alternating features
+// =====================================================================
+
+.hero-container { width: 100%; margin: 0; padding: 0; }
+
+.hero-image {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: calc(100svh - 69px);
+  background: #040810;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(4,8,16,.30) 0%, rgba(4,8,16,.12) 48%, rgba(4,8,16,0) 100%);
+  pointer-events: none;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+  color: #fff;
+}
+.hero-eyebrow {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,.72); margin-bottom: 1.75rem;
+}
+.hero-text h1 {
+  font-family: $headings-font-family;
+  font-size: clamp(2.4rem, 5.6vw, 4.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  font-weight: 400;
+  color: #fff;
+  max-width: 14ch;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
+.hero-byline {
+  font-family: $headings-font-family;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.5;
+  color: rgba(255,255,255,.86);
+  max-width: 46ch;
+}
+// ---- shared page rhythm ----
+.content-block {
+  max-width: 780px; margin: 5rem auto; padding: 0 3rem;
+  font-size: 1.125rem; line-height: 1.6;
+}
+.content-block p { max-width: none; }
+
+.btn-lab {
+  display: inline-block; margin: 2rem 0.5rem 0 0;
+  font-family: $font-family-sans-serif; font-size: 0.875rem; font-weight: 500;
+  padding: 0.7rem 1.5rem; border: 1px solid $accent; border-radius: 2px;
+  background: $accent; color: #fff !important; text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.btn-lab:hover { background: $ink; border-color: $ink; }
+.btn-lab-quiet { background: transparent; color: $accent !important; }
+.btn-lab-quiet:hover { background: $accent; color: #fff !important; }
+
+.text-link {
+  display: inline-block;
+  margin: 1.75rem 1.5rem 0 0;
+  font-family: $font-family-sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .28em;
+}
+
+// ---- evidence strip ----
+.evidence-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1080px; margin: 5rem auto; padding: 3rem;
+  border-block: 1px solid $rule;
+}
+.evidence h3 {
+  font-family: $font-family-sans-serif;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: $accent;
+  margin: 0 0 0.75rem;
+}
+.evidence p { font-size: 0.9375rem; color: $ink-mid; margin: 0; max-width: none; }
+
+// ---- alternating feature blocks ----
+.feature {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(24rem, .85fr);
+  align-items: center; gap: 0;
+  width: 100vw; margin-left: calc(50% - 50vw);
+  background: $paper-alt;
+  border-top: 1px solid $rule;
+}
+.feature-image { height: clamp(30rem, 46vw, 42rem); min-height: 0; overflow: hidden; }
+.feature-image p { margin: 0; height: 100%; }
+.feature-image img {
+  width: 100%; height: 100%; object-fit: cover; display: block; border: 0;
+}
+.feature-image--scientific { background: #0d1116; }
+.feature-image--scientific img {
+  object-fit: contain;
+  padding: clamp(2rem, 4vw, 4.5rem);
+}
+.feature-body { padding: 4rem clamp(2rem, 5vw, 5rem); }
+.feature-body h2 {
+  margin-top: 0;
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -.03em;
+}
+.feature-body p { max-width: 38ch; font-size: 1.0625rem; color: $ink-mid; }
+.feature-body a { font-weight: 500; }
+
+.feature-dark { background: #14181d; border-top-color: #14181d; }
+.feature-dark .feature-body h2 { color: #f4f2ee; }
+.feature-dark .feature-body p { color: rgba(244,242,238,.78); }
+.feature-dark .feature-body a { color: #7fbdb4; }
+
+// =====================================================================
+//  RESEARCH — four image-led gateways and focused area pages
+// =====================================================================
+
+.research-intro,
+.platform-lead {
+  max-width: 760px;
+  margin: 3rem auto 4rem;
+  padding-inline: 2rem;
+  font-family: $headings-font-family;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.5;
+  color: $ink-mid;
+}
+
+.research-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1180px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+  gap: 1px;
+  background: $rule;
+  border: 1px solid $rule;
+}
+
+.research-area-card {
+  display: grid;
+  grid-template-rows: clamp(18rem, 31vw, 26rem) auto;
+  min-width: 0;
+  background: $paper;
+}
+.research-area-card > p { margin: 0; overflow: hidden; }
+.research-area-card > p img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+.research-area-card:hover > p img { transform: scale(1.018); }
+.research-area-card--scientific > p {
+  background: #f1f0ec;
+  display: flex;
+  align-items: center;
+}
+.research-area-card--scientific > p img {
+  object-fit: contain;
+  padding: clamp(1rem, 2.5vw, 2.5rem);
+}
+.research-area-body { padding: clamp(1.75rem, 3vw, 3rem); }
+.research-area-body h2 {
+  max-width: 15ch;
+  margin: 0 0 1rem;
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+.research-area-body h2 a { color: $ink; text-decoration: none; }
+.research-area-body h2 a:hover { color: $accent; }
+.research-area-body p { max-width: 42ch; color: $ink-mid; }
+.area-link {
+  display: inline-block;
+  margin-top: .75rem;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-underline-offset: .25em;
+}
+.research-platform-bridge {
+  max-width: 1080px;
+  margin: 0 auto 5rem;
+  padding: 3.5rem;
+  color: #f4f2ee;
+  background: #14181d;
+}
+.research-platform-bridge h2 { color: #f4f2ee; margin-top: 0; }
+.research-platform-bridge p { color: rgba(244,242,238,.76); max-width: 58ch; }
+.research-platform-bridge a { color: #7fbdb4; }
+
+.research-emerging {
+  max-width: 780px;
+  margin: 0 auto 6rem;
+  padding: 3rem 2rem 0;
+  border-top: 1px solid $rule;
+}
+.research-emerging h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.research-emerging p {
+  max-width: none;
+  color: $ink-mid;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 3rem 2.5rem;
+  max-width: 58rem;
+  margin: 3rem 0 4rem;
+}
+.contact-item { padding-top: 1.5rem; border-top: 1px solid $rule; }
+.contact-icon {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: $accent;
+}
+.contact-item h3 {
+  margin: 0 0 .65rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: $ink-soft;
+}
+.contact-item p { margin: 0; max-width: none; font-size: .9375rem; }
+
+// footer link icons sit just before their label
+.nav-footer .bi::before { vertical-align: -.12em; margin-right: .4rem; }
+
+// A news feature with no photograph yet: single column rather than a gaping image well.
+.news-feature--milestone { grid-template-columns: 1fr; }
+.news-feature--milestone .news-feature-copy { max-width: 62ch; }
+
+.research-translation {
+  width: 100vw;
+  margin: 0 0 0 calc(50% - 50vw);
+  padding: clamp(4rem, 8vw, 6.5rem) 2rem;
+  background: $ink;
+  color: #f4f2ee;
+}
+.research-translation h2 {
+  margin: 0 0 1.75rem;
+  max-width: 22ch;
+  border-bottom: 0;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.18;
+  color: #f4f2ee;
+}
+.research-translation p { max-width: 60ch; color: rgba(244,242,238,.8); }
+.research-translation p:last-child { max-width: none; }
+.research-translation .text-link { color: #7fbdb4; margin-right: 2.25rem; }
+
+.translation-band {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(4rem, 8vw, 7rem) 2rem;
+  background: $ink;
+  color: #f4f2ee;
+}
+.translation-inner { max-width: 46rem; margin: 0 auto; }
+.translation-eyebrow {
+  font-size: .7rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: #7fbdb4; margin-bottom: 1.5rem;
+}
+.translation-band h2 {
+  margin: 0 0 1.75rem;
+  max-width: 22ch;
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.18;
+  color: #f4f2ee;
+}
+.translation-band h2 {
+  border-bottom: 0;          // global h2 rule is a light hairline; invisible-wrong on dark
+  padding-bottom: 0;
+}
+.translation-band p { max-width: 60ch; color: rgba(244,242,238,.8); }
+.translation-note p {
+  margin-top: 1.75rem;
+  font-size: .9375rem;
+  color: rgba(244,242,238,.5);
+}
+.translation-band p:last-child { max-width: none; }   // the links line may run wider
+.translation-band .text-link { color: #7fbdb4; margin-right: 2.25rem; }
+
+.area-page-hero {
+  display: grid;
+  grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr);
+  align-items: stretch;
+  gap: 0;
+  width: 100vw;
+  margin: 2.5rem 0 1rem calc(50% - 50vw);
+  background: $paper-alt;
+  border-block: 1px solid $rule;
+}
+.area-page-copy {
+  align-self: center;
+  justify-self: end;
+  max-width: 34rem;
+  padding: clamp(2.5rem, 6vw, 6rem);
+  font-family: $headings-font-family;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.5;
+  color: $ink-mid;
+}
+.area-page-image {
+  min-height: 30rem;
+  max-height: 42rem;
+  overflow: hidden;
+  background: #101419;
+}
+.area-page-image p { height: 100%; margin: 0; }
+.area-page-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 30rem;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+.area-page-image--scientific img {
+  object-fit: contain;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.direction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 2rem 0 5rem;
+  border: 1px solid $rule;
+  background: $rule;
+}
+.direction-card {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: $paper;
+}
+.direction-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+.direction-card p {
+  margin: 0;
+  color: $ink-mid;
+}
+
+// The publication index uses a generous category rail and keeps taxonomy
+// out of the citation rows.
+#listing-current-pubs .listing-categories { display: none; }
+#listing-earlier-pubs {
+  margin-top: 1rem;
+  padding-top: .25rem;
+}
+.quarto-listing-category {
+  min-width: 15rem;
+  font-size: .8125rem;
+}
+.quarto-listing-category .category {
+  overflow-wrap: anywhere;
+  padding-block: .35rem;
+}
+
+// =====================================================================
+//  PLATFORMS — two substantial systems, then measurement capabilities
+// =====================================================================
+
+.platform-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(22rem, .85fr);
+  align-items: stretch;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  border-top: 1px solid $rule;
+  background: $paper-alt;
+}
+.platform-image { min-height: 38rem; overflow: hidden; background: #11161b; }
+.platform-image p { height: 100%; margin: 0; }
+.platform-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 38rem;
+  object-fit: cover;
+  display: block;
+  border: 0;
+}
+.platform-image--scientific img {
+  object-fit: contain;
+  padding: clamp(2rem, 5vw, 5rem);
+}
+.platform-animation {
+  min-height: 52rem;
+  overflow: hidden;
+  background: $paper;
+}
+.platform-animation iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 52rem;
+  border: 0;
+  background: $paper;
+}
+.platform-copy {
+  align-self: center;
+  padding: clamp(3rem, 6vw, 6rem);
+}
+.platform-copy h2 {
+  max-width: 12ch;
+  margin-top: 0;
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  line-height: 1.04;
+  letter-spacing: -.03em;
+}
+.platform-copy p { max-width: 42ch; color: $ink-mid; }
+.platform-feature--dark { background: #14181d; color: #f4f2ee; }
+.platform-feature--dark h2 { color: #f4f2ee; }
+.platform-feature--dark p { color: rgba(244,242,238,.76); }
+.platform-feature--dark a { color: #7fbdb4; }
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1080px;
+  margin: 6rem auto 2rem;
+  padding: 0 2rem;
+  gap: 1px;
+  background: $rule;
+  border: 1px solid $rule;
+}
+.platform-card { padding: clamp(2rem, 4vw, 3.5rem); background: $paper; }
+.platform-card h2 { margin-top: 0; }
+.platform-card p { color: $ink-mid; }
+.platform-card--image > p:first-child {
+  margin: calc(clamp(2rem, 4vw, 3.5rem) * -1);
+  margin-bottom: 2.5rem;
+  height: 17rem;
+  overflow: hidden;
+}
+.platform-card--image > p:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+  border: 0;
+  background: #11161b;
+}
+
+// ---- About: one portrait, one coherent narrative ----
+.about-profile {
+  display: grid;
+  grid-template-columns: minmax(20rem, .8fr) minmax(28rem, 1.2fr);
+  align-items: stretch;
+  max-width: 1120px;
+  margin: 4rem auto 7rem;
+  border: 1px solid $rule;
+  background: $paper-alt;
+}
+.about-portrait { min-height: 38rem; overflow: hidden; background: #171b20; }
+.about-portrait p { height: 100%; margin: 0; }
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: 38rem;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  border: 0;
+  filter: grayscale(8%);
+}
+.about-copy {
+  align-self: center;
+  padding: clamp(3rem, 6vw, 6rem);
+}
+.about-copy > p {
+  max-width: 48ch;
+  font-family: $headings-font-family;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.62;
+  color: $ink-mid;
+}
+.about-copy .text-link {
+  font-family: $font-family-sans-serif;
+  font-size: .8125rem;
+}
+
+// ---- News: one lead story, then a quiet editorial chronology ----
+.news-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(24rem, .85fr);
+  align-items: stretch;
+  width: 100vw;
+  margin: 3rem 0 6rem calc(50% - 50vw);
+  background: #14181d;
+  color: #f4f2ee;
+}
+.news-feature-image {
+  min-height: 35rem;
+  overflow: hidden;
+  background: #0d1116;
+}
+.news-feature-image p { height: 100%; margin: 0; }
+.news-feature-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 35rem;
+  object-fit: contain;
+  padding: clamp(2rem, 5vw, 5rem);
+  display: block;
+  border: 0;
+}
+.news-feature-image--photo img {
+  object-fit: cover;
+  padding: 0;
+}
+.news-feature-copy {
+  align-self: center;
+  padding: clamp(3rem, 6vw, 6rem);
+}
+.news-feature-copy h2 {
+  max-width: 12ch;
+  margin-top: 1rem;
+  color: #f4f2ee;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -.03em;
+}
+.news-feature-copy p { max-width: 39ch; color: rgba(244,242,238,.76); }
+.news-feature-copy a { color: #7fbdb4; font-weight: 500; }
+.news-date {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: $accent;
+}
+.news-feature .news-date { color: #7fbdb4; }
+.news-upcoming {
+  max-width: 920px;
+  margin: 0 auto 4rem;
+  padding: 2.25rem 2.5rem;
+  border-left: 3px solid $accent;
+  background: $accent-soft;
+}
+.news-upcoming h2 { margin: .6rem 0 .75rem; }
+.news-upcoming p { margin: 0; color: $ink-mid; }
+.news-list {
+  max-width: 920px;
+  margin: 0 auto 7rem;
+  padding: 0 2rem;
+  border-top: 1px solid $rule;
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 3rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid $rule;
+}
+.news-item .news-date { padding-top: .45rem; }
+.news-item h2 { margin: 0 0 1rem; }
+.news-item p { color: $ink-mid; }
+.news-item a {
+  font-size: .875rem;
+  font-weight: 500;
+  text-underline-offset: .25em;
+}
+
+@media (max-width: 900px) {
+  .evidence-strip { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+  .feature { grid-template-columns: 1fr; }
+  .feature-image { min-height: 260px; }
+  .feature-body { padding: 2.5rem 1.5rem; }
+  .hero-image { min-height: calc(100svh - 69px); }
+  .hero-text { padding: 0 1.5rem; }
+  .content-block { padding: 0 1.5rem; margin: 3.5rem auto; }
+  .project-meta { grid-template-columns: 1fr; gap: 1rem; }
+  .research-area-grid,
+  .platform-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+  .direction-grid { grid-template-columns: 1fr; }
+  .research-area-card { grid-template-rows: 18rem auto; }
+  .research-platform-bridge { margin-inline: 1rem; padding: 2.5rem 1.5rem; }
+  .area-page-hero,
+  .platform-feature { grid-template-columns: 1fr; }
+  .area-page-copy { justify-self: stretch; padding: 2.5rem 1.5rem; }
+  .area-page-image,
+  .area-page-image img { min-height: 19rem; }
+  .platform-image,
+  .platform-image img { min-height: 22rem; }
+  .platform-animation,
+  .platform-animation iframe { min-height: 60rem; }
+  .platform-copy { padding: 3rem 1.5rem; }
+  .about-profile {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem 4rem;
+  }
+  .about-portrait,
+  .about-portrait img { min-height: 25rem; }
+  .about-copy { padding: 2.5rem 1.5rem; }
+  .news-feature { grid-template-columns: 1fr; }
+  .news-feature-image,
+  .news-feature-image img { min-height: 22rem; }
+  .news-feature-copy { padding: 3rem 1.5rem; }
+  .news-list { padding: 0 1.5rem; }
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2.5rem 0;
+  }
+}

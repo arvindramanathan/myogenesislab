@@ -1,0 +1,8 @@
+---
+title: "Metformin inhibits branched-chain amino acid (BCAA) derived ketoacidosis and promotes metabolic homeostasis in MSUD"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+---
+
+Sonnet DS, O'Leary MN, Gutierrez MA, Nguyen SM, Mateen S, Hsu Y, et al. *Scientific Reports* 2016;6(1):28775.

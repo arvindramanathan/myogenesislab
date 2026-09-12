@@ -1,0 +1,9 @@
+---
+title: "Carbon metabolism–mediated myogenic differentiation"
+date: 2010-01-01
+year: 2010
+period: "Earlier research"
+categories: ["Muscle regeneration", "Muscle and aging"]
+---
+
+Bracha AL, Ramanathan A, Huang S, Ingber DE, Schreiber SL. *Nature Chemical Biology* 2010;6(3):202–204.

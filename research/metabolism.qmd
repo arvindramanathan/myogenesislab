@@ -1,0 +1,43 @@
+---
+title: "Muscle regeneration, aging and senescence"
+subtitle: "How metabolic state shapes repair, tissue loss and recovery."
+listing:
+  - id: area-projects
+    contents:
+      - ../projects/muscle-regeneration-atrophy.qmd
+      - ../projects/senescence-metabolism.qmd
+      - ../projects/ptgds-inhibitors.qmd
+      - ../projects/exposome-phytochemicals.qmd
+      - ../projects/sarcopenia-translation.qmd
+    type: default
+    sort: "title"
+    fields: [title, description]
+  - id: area-publications
+    contents: ../pubs/*.qmd
+    include:
+      categories: "Muscle and aging"
+    type: default
+    sort: "date desc"
+    fields: [title, description]
+---
+
+::: {.area-page-hero}
+::: {.area-page-copy}
+We ask why muscle can rebuild after injury in one metabolic state yet fail in another. The current programme follows muscle stem-cell behaviour, the signals produced by senescent cells, and the mechanisms among them that could be translated into therapies for sarcopenia.
+:::
+::: {.area-page-image}
+![](../assets/myotubes.png){fig-alt="Differentiated human myoblasts stained for myosin heavy chain, with aligned myotubes in red and nuclei in blue"}
+:::
+:::
+
+*Differentiated human myoblasts stained for myosin heavy chain (MyH). Lab image.*
+
+## Current directions
+
+::: {#area-projects}
+:::
+
+## Publications from this area
+
+::: {#area-publications}
+:::

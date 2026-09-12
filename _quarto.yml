@@ -1,0 +1,65 @@
+project:
+  type: website
+  output-dir: dist
+  render:
+    - "*.qmd"
+    - "projects/*.qmd"
+    - "pubs/*.qmd"
+    - "research/*.qmd"
+  resources:
+    - CNAME
+
+website:
+  title: "Ramanathan Lab"
+  description: "Muscle homeostasis, regeneration and healthy aging — Ramanathan Lab, inStem, Bangalore"
+  site-url: "https://myogenesislab.com"
+  navbar:
+    logo: ""
+    title: "Ramanathan Lab"
+    left:
+      - text: "Research"
+        href: research.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "People"
+        href: people.qmd
+      - text: "Platforms"
+        href: platforms.qmd
+      - text: "News"
+        href: news.qmd
+      - text: "About"
+        href: about.qmd
+
+  page-footer:
+    left: |
+      **Ramanathan Lab** · inStem, GKVK Campus, Bellary Road, Bangalore 560065, India
+      [arvind@instem.res.in](mailto:arvind@instem.res.in)
+    right:
+      - text: "News"
+        href: news.qmd
+      - text: "Contact"
+        href: contact.qmd
+      - text: "inStem"
+        href: "https://instem.res.in"
+      - text: '<i class="bi bi-mortarboard"></i> Google Scholar'
+        href: "https://scholar.google.com/citations?user=cK3W34QAAAAJ&hl=en"
+      - text: '<i class="bi bi-twitter-x"></i> \@arvindaginglab'
+        href: "https://x.com/arvindaginglab"
+    center: "Last updated September 2026"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - theme.scss
+    toc: false
+    anchor-sections: true
+    link-external-newwindow: true
+    grid:
+      body-width: 900px
+      sidebar-width: 0px
+      margin-width: 120px
+
+# Every page inherits these unless it overrides them.
+title-block-banner: false
+date-format: "MMMM YYYY"

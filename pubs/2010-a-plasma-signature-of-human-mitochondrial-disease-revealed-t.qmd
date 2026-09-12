@@ -1,0 +1,9 @@
+---
+title: "A plasma signature of human mitochondrial disease revealed through metabolic profiling of spent media from cultured muscle cells"
+date: 2010-01-01
+year: 2010
+period: "Earlier research"
+categories: ["Metabolomics"]
+---
+
+Shaham O, Slate NG, Goldberger O, Xu Q, Ramanathan A, Souza AL, et al. *PNAS* 2010;107(4):1571–1575.

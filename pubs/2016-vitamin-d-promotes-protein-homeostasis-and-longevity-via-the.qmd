@@ -1,0 +1,8 @@
+---
+title: "Vitamin D promotes protein homeostasis and longevity via the stress response pathway genes skn-1, ire-1, and xbp-1"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+---
+
+Mark KA, Dumas KJ, Bhaumik D, Schilling B, Davis S, Oron TR, et al. *Cell Reports* 2016;17(5):1227–1237.

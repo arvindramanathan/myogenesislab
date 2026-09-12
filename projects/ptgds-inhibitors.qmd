@@ -1,0 +1,27 @@
+---
+title: "Lipid signalling as a therapeutic target"
+subtitle: "Muscle regeneration, aging and senescence"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Lipid signalling"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Our published work has identified lipid-signalling pathways associated with cellular
+senescence and impaired tissue function. Current studies examine how these pathways can be
+interrogated pharmacologically in muscle and senescence models.
+
+## Translational direction
+
+Mechanistic studies are combined with cellular phenotyping to determine whether modulation of lipid
+signalling can improve regenerative outcomes. Compound structures, optimisation strategy and
+assay-development details are withheld while intellectual-property work proceeds.
+
+## Publications
+
+::: {#listing-papers}
+:::

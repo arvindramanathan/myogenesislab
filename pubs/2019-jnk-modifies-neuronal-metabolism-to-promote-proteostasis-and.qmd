@@ -1,0 +1,8 @@
+---
+title: "JNK modifies neuronal metabolism to promote proteostasis and longevity"
+date: 2019-01-01
+year: 2019
+period: "Since 2019"
+---
+
+Wang L, Davis SS, Borch Jensen M, Rodriguez-Fernandez IA, Apaydin C, et al. *Aging Cell* 2019;18(3):e12849.

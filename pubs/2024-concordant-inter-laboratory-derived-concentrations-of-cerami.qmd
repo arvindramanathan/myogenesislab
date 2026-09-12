@@ -1,0 +1,9 @@
+---
+title: "Concordant inter-laboratory derived concentrations of ceramides in human plasma reference materials via authentic standards"
+date: 2024-01-01
+year: 2024
+period: "Since 2019"
+categories: ["Metabolomics"]
+---
+
+Torta F, Hoffmann N, Burla B, Alecu I, Arita M, Bamba T, Bennett SAL, et al. *Nature Communications* 2024;15(1):8562.

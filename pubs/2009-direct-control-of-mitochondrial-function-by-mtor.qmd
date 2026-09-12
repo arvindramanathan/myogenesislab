@@ -1,0 +1,8 @@
+---
+title: "Direct control of mitochondrial function by mTOR"
+date: 2009-01-01
+year: 2009
+period: "Earlier research"
+---
+
+Ramanathan A, Schreiber SL. *PNAS* 2009;106(52):22229–22232.

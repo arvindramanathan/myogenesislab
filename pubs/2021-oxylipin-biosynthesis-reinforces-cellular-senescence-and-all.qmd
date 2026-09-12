@@ -1,0 +1,9 @@
+---
+title: "Oxylipin biosynthesis reinforces cellular senescence and allows detection of senolysis"
+date: 2021-01-01
+year: 2021
+period: "Since 2019"
+categories: ["Cellular senescence", "Lipid signalling", "Muscle and aging"]
+---
+
+Wiley CD, Sharma R, Davis SS, Lopez-Dominguez JA, Mitchell KP, et al. *Cell Metabolism* 2021;33(6):1124–1136.e5.

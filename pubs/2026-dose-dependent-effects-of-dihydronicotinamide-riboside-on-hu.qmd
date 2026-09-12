@@ -1,0 +1,9 @@
+---
+title: "Dose-dependent effects of dihydronicotinamide riboside on human engineered skeletal muscle development"
+date: 2026-01-01
+year: 2026
+period: "Since 2019"
+categories: ["Human tissue models", "Muscle and aging"]
+---
+
+Venkateshvaran A, Pundlik SS, Suresh Y, Hegde A, Venkatesh B, et al. *ACS Biomater Sci Eng* 2026;12(7):3523–3538.

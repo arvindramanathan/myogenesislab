@@ -1,0 +1,9 @@
+---
+title: "Comprehensive metabolomic analysis of saliva using SWATH–DIA reveals systemic metabolic adaptations to exercise"
+date: 2026-01-01
+year: 2026
+period: "Since 2019"
+categories: ["Metabolomics"]
+---
+
+Hashmi MA, Gogia D, Singh N, Ramanathan A. *ACS Omega* 2026;11(21):30561.

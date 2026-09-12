@@ -1,0 +1,27 @@
+---
+title: "Cold adaptation and RBM3"
+subtitle: "Cold and cellular resilience"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Cold adaptation"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Mild hypothermia activates a coordinated cellular response rather than simply slowing metabolism.
+We study how this response reshapes mitochondrial function, RNA regulation and muscle-cell
+differentiation, with particular attention to the cold-shock protein RBM3.
+
+## Biological focus
+
+By following cells during cooling and recovery, we examine how protective programmes are established,
+maintained and reversed. This work provides a mechanistic basis for asking whether aspects of cold
+adaptation can be used to improve tissue resilience without prolonged cooling.
+
+## Publications
+
+::: {#listing-papers}
+:::

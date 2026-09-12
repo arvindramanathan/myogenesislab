@@ -1,0 +1,27 @@
+---
+title: "Muscle regeneration and atrophy"
+subtitle: "Muscle regeneration, aging and senescence"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Muscle regeneration"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Skeletal muscle repair depends on coordinated changes in cell state and metabolism. We investigate
+how metabolic regulation influences the transition from stem-cell activation to differentiation,
+and how these processes become disrupted during atrophy and aging.
+
+## From mechanism to function
+
+Cell and bioengineered-tissue models are combined with metabolomics, lipidomics, imaging and
+functional phenotyping. This allows molecular pathways to be evaluated in relation to regenerative
+capacity and muscle performance.
+
+## Publications
+
+::: {#listing-papers}
+:::

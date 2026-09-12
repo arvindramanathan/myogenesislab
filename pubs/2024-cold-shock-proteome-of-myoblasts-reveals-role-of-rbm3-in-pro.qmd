@@ -1,0 +1,9 @@
+---
+title: "Cold-shock proteome of myoblasts reveals role of RBM3 in promotion of mitochondrial metabolism and myoblast differentiation"
+date: 2024-01-01
+year: 2024
+period: "Since 2019"
+categories: ["Cold adaptation", "Cold resilience", "Muscle regeneration", "Muscle and aging"]
+---
+
+Dey P, Rajalaxmi S, Saha P, Thakur PS, Hashmi MA, Lal H, Saini N, et al. *Communications Biology* 2024;7(1):515.

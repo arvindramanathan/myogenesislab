@@ -1,0 +1,8 @@
+---
+title: "Shotgun optical maps of the whole *Escherichia coli* O157:H7 genome"
+date: 2001-01-01
+year: 2001
+period: "Earlier research"
+---
+
+Lim A, Dimalanta ET, Potamousis KD, Yen G, Apodoca J, Tao C, Lin J, et al. *Genome Research* 2001;11(9):1584–1593.

@@ -1,0 +1,8 @@
+---
+title: "A *Caenorhabditis elegans* model elucidates a conserved role for TRPA1-Nrf signaling in reactive α-dicarbonyl detoxification"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+---
+
+Chaudhuri J, Bose N, Gong J, Hall D, Rifkind A, Bhaumik D, Peiris TH, et al. *Current Biology* 2016;26(22):3014–3025.

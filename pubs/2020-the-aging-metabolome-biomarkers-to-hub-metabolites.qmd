@@ -1,0 +1,9 @@
+---
+title: "The aging metabolome — biomarkers to hub metabolites"
+date: 2020-01-01
+year: 2020
+period: "Since 2019"
+categories: ["Metabolomics", "Review"]
+---
+
+Sharma R, Ramanathan A. *Proteomics* 2020;20(5–6):1800407.

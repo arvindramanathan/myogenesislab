@@ -1,0 +1,23 @@
+---
+title: "Landscape Analysis on Alternatives to Animal Testing for Drug Development in India"
+date: "2026"
+year: 2026
+period: "Since 2019"
+categories: ["Human tissue models", "Research practice"]
+image: ../assets/publications/2026-nams-landscape-report-cover.png
+image-alt: "Cover of the Landscape Analysis on Alternatives to Animal Testing for Drug Development in India"
+---
+
+::: {.columns .publication-report-entry}
+::: {.column width="28%"}
+![Cover of the *Landscape Analysis on Alternatives to Animal Testing for Drug Development in India*.](../assets/publications/2026-nams-landscape-report-cover.png){fig-alt="Cover of the Landscape Analysis on Alternatives to Animal Testing for Drug Development in India"}
+:::
+
+::: {.column width="72%"}
+K V S Narayana Raju, Surat Parvatam, Harshita Mittal, Paulami Dey, Arvind Ramanathan, Apoorva, Vaishnavi Vasanth, Anita Varadharajan. *Landscape Analysis Report 2025–26*. Dr. Reddy’s Laboratories Limited; DBT BRiC–Institute for Stem Cell Science and Regenerative Medicine (inStem); Humane World for Animals India; Animal Law & Policy Network.
+
+The report examines the use and regulatory adoption of new approach methodologies in India and sets out a roadmap for coordination, validation, infrastructure, training and regulatory alignment.
+
+<a class="btn btn-primary" href="https://www.drreddys.com/cms/sites/default/files/2026-02/Final%20report%20-%20Landscape%20Analysis%20on%20alternatives%20to%20animal%20testing_report.pdf">Download the report (PDF)</a>
+:::
+:::

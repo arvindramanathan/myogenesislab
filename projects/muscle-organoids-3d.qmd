@@ -1,0 +1,28 @@
+---
+title: "Bioengineered human muscle"
+subtitle: "Human tissue models"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Human tissue models"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Bioengineered human muscle provides a controlled tissue-scale system for investigating development,
+injury, repair and treatment response. It creates a human experimental context in which molecular
+changes can be read directly against tissue function.
+
+## Functional and neuromuscular models
+
+The platform reports functional measurements, including contractile force, alongside quantitative
+imaging and molecular profiling. It is being extended to motor neuron–muscle co-cultures and
+multiplexed assays for modelling sarcopenia and studying differential treatment responses relevant
+to precision medicine.
+
+## Publications
+
+::: {#listing-papers}
+:::

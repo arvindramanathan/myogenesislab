@@ -1,0 +1,31 @@
+---
+title: "Space and microgravity biology"
+subtitle: "From human muscle stem cells in orbit to controlled simulation on the bench."
+listing:
+  - id: area-projects
+    contents:
+      - ../projects/project-myogenesis-iss.qmd
+      - ../projects/clinostem-gravisim.qmd
+    type: default
+    sort: "title"
+    fields: [title, description]
+---
+
+::: {.area-page-hero}
+::: {.area-page-copy}
+[Project Myogenesis](../projects/project-myogenesis-iss.qmd), our human muscle stem-cell experiment aboard the International Space Station during Axiom Mission 4, anchors this research area.
+We pair the rare opportunity of spaceflight with ground simulation so that observations from orbit
+can become repeatable biological questions in the laboratory.
+:::
+::: {.area-page-image}
+![](../assets/hero-iss.jpg){fig-alt="Loading human muscle stem cells into flight hardware before the Axiom-4 mission to the International Space Station"}
+:::
+:::
+
+*Loading human muscle stem cells into the flight habitat before Axiom Mission 4. Habitat: BioServe Space
+Technologies. Photograph: Arvind Ramanathan.*
+
+## Current directions
+
+::: {#area-projects}
+:::

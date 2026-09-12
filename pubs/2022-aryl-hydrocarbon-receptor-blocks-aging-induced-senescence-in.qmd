@@ -1,0 +1,9 @@
+---
+title: "Aryl hydrocarbon receptor blocks aging-induced senescence in the liver and fibroblast cells"
+date: 2022-01-01
+year: 2022
+period: "Since 2019"
+categories: ["Cellular senescence", "Muscle and aging"]
+---
+
+Nacarino-Palma A, Rico-Leo EM, Campisi J, Ramanathan A, et al. *Aging (Albany NY)* 2022;14(10):4281.

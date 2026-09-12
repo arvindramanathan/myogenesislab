@@ -1,0 +1,24 @@
+---
+title: "Senescence and metabolism"
+subtitle: "Muscle regeneration, aging and senescence"
+listing:
+  id: listing-papers
+  contents: ../pubs/*.qmd
+  include:
+    categories: "Cellular senescence"
+  type: default
+  sort: "date desc"
+  fields: [title, description]
+---
+
+Cellular senescence alters tissue function through persistent changes in metabolism and
+intercellular signalling. We study how lipid metabolism helps establish and maintain this state, and how senescent cells influence muscle regeneration.
+
+## Metabolic control of cell state
+
+We pair metabolomic and lipidomic measurements with functional cell and tissue assays, to separate markers of senescence from the pathways that actively sustain it. These studies run from the basic regulation of cell state through to the decline of tissue repair with age.
+
+## Publications
+
+::: {#listing-papers}
+:::

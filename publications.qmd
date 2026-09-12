@@ -1,0 +1,49 @@
+---
+title: "Publications"
+subtitle: "Verified against Google Scholar, September 2026."
+grid:
+  body-width: 760px
+  margin-width: 280px
+listing:
+  - id: current-pubs
+    contents: pubs
+    include:
+      period: "Since 2019"
+    type: default
+    sort: "date desc"
+    categories: true
+    page-size: 100
+    fields: [image, title, description, categories]
+    field-display-names:
+      description: ""
+  - id: earlier-pubs
+    contents: pubs
+    include:
+      period: "Earlier research"
+    type: default
+    sort: "date desc"
+    categories: false
+    page-size: 100
+    fields: [title, description]
+    field-display-names:
+      description: ""
+---
+
+The complete publication record is also available on
+[Google Scholar](https://scholar.google.com/citations?user=cK3W34QAAAAJ&hl=en).
+
+## Publications since 2019
+
+Research from our current programme and continuing collaborations. Use the subject categories
+to explore the principal research themes.
+
+::: {#current-pubs}
+:::
+
+## Earlier research
+
+Work preceding 2019, spanning chemical biology, metabolism, mitochondrial function and systems
+biology.
+
+::: {#earlier-pubs}
+:::

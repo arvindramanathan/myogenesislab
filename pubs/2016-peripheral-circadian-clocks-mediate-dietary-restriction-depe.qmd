@@ -1,0 +1,8 @@
+---
+title: "Peripheral circadian clocks mediate dietary restriction-dependent changes in lifespan and fat metabolism in Drosophila"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+---
+
+Katewa SD, Akagi K, Bose N, Rakshit K, Camarella T, Zheng X, Hall D, et al. *Cell Metabolism* 2016;23(1):143–154.

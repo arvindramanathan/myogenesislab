@@ -1,0 +1,9 @@
+---
+title: "Metabolite profiling of blood from individuals undergoing planned myocardial infarction reveals early markers of myocardial injury"
+date: 2008-01-01
+year: 2008
+period: "Earlier research"
+categories: ["Metabolomics"]
+---
+
+Lewis GD, Wei RU, Liu E, Yang E, Shi X, Martinovic M, Farrell L, Asnani A, et al. *Journal of Clinical Investigation* 2008;118(10):3503–3512.

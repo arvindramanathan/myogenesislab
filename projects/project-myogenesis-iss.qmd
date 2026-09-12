@@ -1,0 +1,51 @@
+---
+title: "Project Myogenesis — Axiom Mission 4 and the ISS"
+subtitle: "Space and microgravity biology"
+status: "Flight completed; analysis underway"
+---
+
+::: {.project-deck}
+Project Myogenesis investigates how microgravity influences human skeletal muscle stem-cell function
+and the capacity to maintain and regenerate muscle.
+:::
+
+::: {.project-meta}
+**Status**  
+Flight completed; analysis underway
+
+**Partners**  
+ISRO · Axiom Space · BioServe Space Technologies · Siobhan Malany, University of Florida
+:::
+
+![Loading human muscle stem cells into the flight habitat before Axiom Mission 4. Flight habitat: BioServe Space Technologies. Photograph: Arvind Ramanathan.](../assets/hero-iss.jpg){fig-alt="A gloved researcher loads human muscle stem cell culture chambers into the flight habitat used for Axiom Mission 4"}
+
+## A human muscle experiment in orbit
+
+Human skeletal muscle stem cells were cultured aboard the International Space Station during
+Axiom Mission 4 in a BioServe Space Technologies flight habitat, with matched ground controls at
+inStem.
+
+The experiment pairs on-orbit imaging with post-flight molecular and metabolic measurements.
+Analysis is underway; results and intervention details will be shared only after disclosure and
+publication clearance.
+
+## Microgravity as an experimental context
+
+Spaceflight produces rapid physiological deconditioning and creates a distinctive setting in which
+to investigate muscle maintenance and repair. Comparing flight samples with matched ground controls
+can reveal cellular responses that are difficult to isolate in conventional models while informing
+questions relevant to both human spaceflight and disuse on Earth.
+
+## Partners
+
+The project brings together ISRO, Axiom Space, BioServe Space Technologies and Siobhan Malany at the
+University of Florida.
+
+## Mission coverage
+
+Nature India reported on Project Myogenesis as part of its coverage of the Indian experiments selected
+for Axiom Mission 4. Axiom Space also documented the project and its operation aboard the ISS.
+
+- [Nature India: Space mission to take algae, muscles, tardigrades to ISS](https://www.nature.com/articles/d44151-025-00072-8)
+- [Axiom Space: Myogenesis](https://www.axiomspace.com/research/myogenesis)
+- [Axiom Space: Ax-4 Flight Day 10](https://www.axiomspace.com/mission-blog/ax4-fd10)

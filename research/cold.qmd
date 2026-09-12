@@ -1,0 +1,42 @@
+---
+title: "Cold and cellular resilience"
+subtitle: "What protective stress responses reveal about metabolism and repair."
+listing:
+  - id: area-projects
+    contents:
+      - ../projects/cold-adaptation-rbm3.qmd
+      - ../projects/hypothermia-mimetics-skin.qmd
+    type: default
+    sort: "title"
+    fields: [title, description]
+  - id: area-publications
+    contents: ../pubs/*.qmd
+    include:
+      categories: "Cold resilience"
+    type: default
+    sort: "date desc"
+    fields: [title, description]
+---
+
+::: {.area-page-hero}
+::: {.area-page-copy}
+Cold is a protective environmental stress rather than merely an injury. We study how mild
+hypothermia and RBM3 reorganise cellular metabolism, RNA regulation and mitochondrial function, and
+whether those mechanisms can improve resilience without requiring cold exposure.
+:::
+::: {.area-page-image .area-page-image--scientific}
+![](../assets/cold-rbm3-graphical-abstract.png){fig-alt="Graphical abstract summarising the cellular effects of mild hypothermia and RBM3 on RNA, lipid metabolism, mitochondria and muscle differentiation"}
+:::
+:::
+
+*Summary of our published work on mild hypothermia and RBM3. See the publications below.*
+
+## Current directions
+
+::: {#area-projects}
+:::
+
+## Publications from this area
+
+::: {#area-publications}
+:::

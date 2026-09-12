@@ -1,0 +1,9 @@
+---
+title: "Understanding the patterns and magnitude of life science publication retractions in the last four decades"
+date: 2025-01-01
+year: 2025
+period: "Since 2019"
+categories: ["Research practice"]
+---
+
+Bhattacharyya S, Chatterjee N, Ramanathan A. *International Journal for Educational Integrity* 2025;21(1):17.

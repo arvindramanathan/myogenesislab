@@ -1,0 +1,117 @@
+---
+title: "Research"
+subtitle: "Four areas spanning muscle regeneration and aging, human tissue models, space biology, and cellular resilience."
+page-layout: full
+---
+
+::: {.research-intro}
+We study how metabolic state governs whether human tissues repair, adapt or decline. These four areas
+share experimental systems and measurement platforms, but each begins with a distinct biological
+problem.
+:::
+
+::: {.research-area-grid}
+::: {.research-area-card}
+![](assets/myotubes.png){fig-alt="Differentiated human myoblasts stained for myosin heavy chain, with aligned myotubes in red and nuclei in blue"}
+
+::: {.research-area-body}
+## [Muscle regeneration, aging and senescence](research/metabolism.qmd)
+
+How metabolic state and lipid signalling shape muscle stem-cell decisions, tissue repair and loss of
+function with age.
+
+[Explore this area →](research/metabolism.qmd){.area-link}
+:::
+:::
+
+::: {.research-area-card}
+![](assets/organoid-tmrm.png){fig-alt="A whole bioengineered human muscle construct imaged with TMRM, showing mitochondrial membrane potential across the tissue"}
+
+::: {.research-area-body}
+## [Human tissue models](research/tissue-models.qmd)
+
+Bioengineered human muscle and motor neuron–muscle co-cultures for functional studies of aging,
+sarcopenia and treatment response.
+
+[Explore this area →](research/tissue-models.qmd){.area-link}
+:::
+:::
+
+::: {.research-area-card}
+![](assets/hero-iss.jpg){fig-alt="Loading human muscle stem cells into flight hardware before the Axiom-4 mission to the International Space Station"}
+
+::: {.research-area-body}
+## [Space and microgravity biology](research/space.qmd)
+
+Human muscle stem cells in orbit, paired with ground-based simulation to investigate rapid
+deconditioning and recovery.
+
+[Explore this area →](research/space.qmd){.area-link}
+:::
+:::
+
+::: {.research-area-card .research-area-card--scientific}
+![](assets/cold-rbm3-graphical-abstract.png){fig-alt="Graphical abstract summarising the cellular effects of mild hypothermia and RBM3 on RNA, lipid metabolism, mitochondria and muscle differentiation"}
+
+::: {.research-area-body}
+## [Cold and cellular resilience](research/cold.qmd)
+
+How mild hypothermia and the cold-shock protein RBM3 reshape metabolism and help cells withstand
+environmental stress.
+
+[Explore this area →](research/cold.qmd){.area-link}
+:::
+:::
+:::
+
+::: {.research-platform-bridge}
+## Shared platforms, different questions
+
+Bioengineered 3D organoids, Gravisim, metabolomics, Raman imaging and quantitative image analysis
+run through all four areas without flattening them into one programme.
+
+[See the platforms →](platforms.qmd){.text-link}
+:::
+
+::: {.research-emerging}
+## Skin: the same questions in a second tissue
+
+Skin and skeletal muscle are not obvious neighbours, but they decline in similar ways. Both renew
+continuously from resident stem-cell pools, both lose that capacity as mitochondrial function falls and
+senescent cells accumulate, and both meet the environment directly. A mechanism worked out in muscle is
+therefore testable in skin — and one that holds in both tissues is more likely to be general than one
+demonstrated in either alone.
+
+Our first step in that direction comes out of the cold work: whether the protective programmes engaged
+by mild hypothermia, RBM3 among them, can be induced in skin without sustained cooling. This is one
+line of work rather than a separate programme, and deliberately so. It begins with a mechanism we
+already understand, and asks how far it travels.
+
+[Skin research →](research/skin.qmd){.text-link}
+:::
+
+::: {.research-translation}
+::: {.translation-inner}
+::: {.translation-eyebrow}
+Where these areas lead
+:::
+
+## From mechanism to intervention
+
+Each of the four areas above begins with a question about how muscle maintains or rebuilds itself.
+Several of them end somewhere more practical. The mechanisms we identify — metabolic,
+lipid-signalling, cold-responsive — become starting points for intervention, tested in the same
+bioengineered human tissue we use to study the biology and read against cohort measurements that show
+which changes matter in people.
+
+This is not a fifth research area. It is the direction the others point, which is why the work sits
+inside them rather than beside them.
+
+::: {.translation-note}
+Several of these interventions are the subject of intellectual-property protection and are described
+here only in general terms.
+:::
+
+[Sarcopenia and precision medicine →](projects/sarcopenia-translation.qmd){.text-link} [Lipid signalling as a therapeutic target →](projects/ptgds-inhibitors.qmd){.text-link}
+:::
+:::

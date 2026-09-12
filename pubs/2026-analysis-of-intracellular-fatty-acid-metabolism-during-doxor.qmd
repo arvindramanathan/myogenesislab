@@ -1,0 +1,9 @@
+---
+title: "Analysis of intracellular fatty acid metabolism during doxorubicin-induced senescence of MCF7 cells using Raman imaging"
+date: 2026-01-01
+year: 2026
+period: "Since 2019"
+categories: ["Raman imaging", "Cellular senescence", "Muscle and aging"]
+---
+
+Pundlik SS, Venkateshvaran A, Suresh Y, Mamgain H, Ramanathan A. *ACS Omega* 2026;11(9):14426.

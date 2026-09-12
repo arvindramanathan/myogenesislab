@@ -1,0 +1,9 @@
+---
+title: "Pharmacological profiling of intravenous MP-04: sustained NAD+ augmentation, immune modulation, and renal protection in preclinical models"
+date: 2026-01-01
+year: 2026
+period: "Since 2019"
+categories: ["Muscle and aging"]
+---
+
+Ghosh A, Pranesh G, Zachariah N, Murakami E, Heredia A, Mathur P, et al. *Frontiers in Pharmacology* 2026;17:1832979.

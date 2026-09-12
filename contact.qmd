@@ -1,0 +1,45 @@
+---
+title: "Contact"
+---
+
+For enquiries about the Ramanathan Lab, research collaborations or opportunities to join the lab:
+
+::: {.contact-grid}
+::: {.contact-item}
+[]{.bi .bi-envelope .contact-icon aria-hidden="true"}
+
+### Email
+
+**Arvind Ramanathan**  
+[arvind@instem.res.in](mailto:arvind@instem.res.in)
+:::
+
+::: {.contact-item}
+[]{.bi .bi-geo-alt .contact-icon aria-hidden="true"}
+
+### Visit
+
+Ramanathan Lab  
+Institute for Stem Cell Science and Regenerative Medicine (inStem)  
+GKVK Campus, Bellary Road  
+Bangalore 560065, India
+:::
+
+::: {.contact-item}
+[]{.bi .bi-twitter-x .contact-icon aria-hidden="true"}
+
+### On X
+
+Lab news and new work are posted at
+[\@arvindaginglab](https://x.com/arvindaginglab).
+:::
+
+::: {.contact-item}
+[]{.bi .bi-mortarboard .contact-icon aria-hidden="true"}
+
+### Publications
+
+The full record is on
+[Google Scholar](https://scholar.google.com/citations?user=cK3W34QAAAAJ&hl=en).
+:::
+:::

@@ -1,0 +1,9 @@
+---
+title: "Mitochondrial dysfunction induces senescence with a distinct secretory phenotype"
+date: 2016-01-01
+year: 2016
+period: "Earlier research"
+categories: ["Cellular senescence", "Muscle and aging"]
+---
+
+Wiley CD, Velarde MC, Lecot P, Liu SU, Sarnoski EA, Freund A, et al. *Cell Metabolism* 2016;23(2):303–314.

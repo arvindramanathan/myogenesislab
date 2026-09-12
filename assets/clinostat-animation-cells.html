@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cells on a multiwell slide in a clinostat</title>
+<style>
+  :root{
+    --ink:#14181d; --ink-mid:#4a545e; --ink-soft:#7b858f;
+    --paper:#fbfaf8; --paper-alt:#f4f2ee; --rule:#e2ded7;
+    --accent:#1a4d5c; --accent-soft:#e8f0f1;
+    --gvec:#a3552f; --cell:#1a4d5c;
+    --f-head:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --f-body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);
+            font-family:var(--f-body);font-size:15px;line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:1.5rem}
+  .stage{position:relative;border:1px solid var(--rule);background:var(--paper-alt);border-radius:2px}
+  canvas{display:block;width:100%;height:auto}
+  .legend{position:absolute;top:.9rem;left:1rem;font-size:.6875rem;color:var(--ink-mid)}
+  .legend span{display:block;margin-bottom:.15rem}
+  .swatch{display:inline-block;width:.7rem;height:2px;vertical-align:middle;margin-right:.4rem}
+  .dot{display:inline-block;width:.45rem;height:.45rem;border-radius:50%;
+       background:var(--cell);vertical-align:middle;margin-right:.55rem}
+
+  .readout{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+           margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--rule)}
+  .readout h3{margin:0 0 .3rem;font-size:.625rem;font-weight:600;letter-spacing:.12em;
+              text-transform:uppercase;color:var(--accent)}
+  .readout .val{font-family:var(--f-head);font-size:1.5rem;line-height:1.1;
+                font-variant-numeric:tabular-nums}
+  .readout .sub{font-size:.75rem;color:var(--ink-soft)}
+  .bar{height:4px;background:var(--rule);margin-top:.5rem;border-radius:2px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--accent);width:0%;transition:width .15s linear}
+
+  .controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1.25rem}
+  button{font-family:var(--f-body);font-size:.8125rem;font-weight:500;padding:.45rem 1rem;
+         border:1px solid var(--accent);border-radius:2px;background:transparent;
+         color:var(--accent);cursor:pointer}
+  button:hover{background:var(--accent);color:#fff}
+  button.on{background:var(--accent);color:#fff}
+  button.warn{border-color:var(--gvec);color:var(--gvec)}
+  button.warn:hover,button.warn.on{background:var(--gvec);color:#fff}
+  label{font-size:.8125rem;color:var(--ink-mid);display:flex;align-items:center;gap:.5rem}
+  input[type=range]{accent-color:var(--accent)}
+
+  figcaption{margin-top:.9rem;font-size:.8125rem;color:var(--ink-soft);max-width:70ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<figure style="margin:0">
+  <div class="stage">
+    <canvas id="c" width="1400" height="980" aria-label="An eight-well chamber slide of adherent cells, mounted inside a sample box that rotates about two perpendicular axes in a clinostat. The cells stay attached while the direction of gravity within the slide sweeps continuously."></canvas>
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--gvec)"></i>gravity, fixed in the room</span>
+      <span><i class="swatch" style="background:var(--accent)"></i>rotation axes</span>
+      <span><i class="dot"></i>cells</span>
+    </div>
+  </div>
+
+  <div class="readout">
+    <div>
+      <h3>Time-averaged g</h3>
+      <div class="val" id="avg">1.00 <span style="font-size:.9rem;color:var(--ink-soft)">g</span></div>
+      <div class="bar"><i id="barG" style="width:100%"></i></div>
+    </div>
+    <div>
+      <h3>Gravity vector</h3>
+      <div class="val" id="state" style="font-size:1.05rem;font-family:var(--f-body);
+           font-weight:500;line-height:1.35">direction sweeping</div>
+      <div class="sub">as the adherent cells experience it</div>
+    </div>
+    <div>
+      <h3>Elapsed</h3>
+      <div class="val" id="rev">0.0 <span style="font-size:.9rem;color:var(--ink-soft)">rev</span></div>
+      <div class="sub">outer-axis revolutions</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="mode" class="on">Clinostat running</button>
+    <button id="stat" class="warn">Hold still — static 1 g</button>
+    <button id="reset">Reset average</button>
+    <label>Speed <input id="speed" type="range" min="0.2" max="3" step="0.1" value="1"></label>
+  </div>
+
+  <figcaption>
+    An eight-well chamber slide of adherent cells inside the rotating sample box. The cells stay where
+    they attached; gravity, too, is unchanged — it points down throughout. What changes is the
+    <em>direction</em> from which gravity reaches each cell, which sweeps over every orientation as the
+    box turns about both axes. Hold the box still and that direction becomes fixed again.
+  </figcaption>
+</figure>
+
+</div>
+
+<script>
+(function(){
+  const cvs=document.getElementById('c'), ctx=cvs.getContext('2d');
+  const elAvg=document.getElementById('avg');
+  const elRev=document.getElementById('rev');
+  const elState=document.getElementById('state');
+  const barG=document.getElementById('barG');
+  const bMode=document.getElementById('mode'), bStat=document.getElementById('stat');
+  const bRst=document.getElementById('reset'), speedI=document.getElementById('speed');
+
+  const BASE_W=1400, BASE_H=980; let S=1;
+  function fit(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=cvs.clientWidth||BASE_W/2;
+    cvs.width=Math.round(w*dpr); cvs.height=Math.round(w*(BASE_H/BASE_W)*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0); S=w/BASE_W;
+  }
+  addEventListener('resize',fit);
+
+  const rotX=(v,t)=>{const c=Math.cos(t),s=Math.sin(t);
+    return [v[0], v[1]*c-v[2]*s, v[1]*s+v[2]*c];};
+  const rotY=(v,t)=>{const c=Math.cos(t),s=Math.sin(t);
+    return [v[0]*c+v[2]*s, v[1], -v[0]*s+v[2]*c];};
+  const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]];
+  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+  const norm=v=>{const m=Math.hypot(v[0],v[1],v[2])||1;return [v[0]/m,v[1]/m,v[2]/m];};
+
+  const toWorld=(v,a,b)=>rotX(rotY(v,b),a);
+  const toBox  =(v,a,b)=>rotY(rotX(v,-a),-b);
+
+  const CAM_X=-0.66, CAM_Y=0.58, D=6.0;
+  function project(v){
+    let p=rotY(v,CAM_Y); p=rotX(p,CAM_X);
+    const z=p[2]+D, f=3.5/z;
+    return [BASE_W*0.50 + p[0]*f*330, BASE_H*0.50 - p[1]*f*330, z];
+  }
+
+  // ---- the sample box ----
+  const HX=0.92,HY=0.55,HZ=0.72;
+  const V=[[-HX,-HY,-HZ],[HX,-HY,-HZ],[HX,HY,-HZ],[-HX,HY,-HZ],
+           [-HX,-HY,HZ],[HX,-HY,HZ],[HX,HY,HZ],[-HX,HY,HZ]];
+  const FACES=[{i:[0,1,2,3]},{i:[5,4,7,6]},{i:[4,0,3,7]},
+               {i:[1,5,6,2]},{i:[3,2,6,7]},{i:[4,5,1,0]}];
+
+  // ---- 8-well chamber slide, lying flat in the box (its plane = box XZ) ----
+  const SLIDE_Y=-0.12, COLS=4, ROWS=2;
+  const WW=0.36, WH=0.30, GAPX=0.06, GAPZ=0.07;   // well footprint in box units
+  const SLIDE_W=COLS*WW+(COLS-1)*GAPX, SLIDE_D=ROWS*WH+(ROWS-1)*GAPZ;
+  const wells=[];
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
+    wells.push({
+      cx: -SLIDE_W/2 + WW/2 + c*(WW+GAPX),
+      cz: -SLIDE_D/2 + WH/2 + r*(WH+GAPZ),
+      cells:[]
+    });
+  }
+  const N_PER_WELL=15, CELL_R=0.016;
+  function seed(){
+    wells.forEach(w=>{
+      w.cells=[];
+      for(let i=0;i<N_PER_WELL;i++){
+        // adherent cells: attached to the substrate, they do not move
+        w.cells.push({
+          u:(Math.random()*2-1)*(WW/2-0.05),
+          v:(Math.random()*2-1)*(WH/2-0.05)
+        });
+      }
+    });
+  }
+  seed();
+
+  // ---- state ----
+  let a=0,b=0, sum=[0,0,0], n=0, rotating=true, last=0;
+  const W1=1.0, W2=0.6180339887;
+
+  function step(dt,sp){
+    if(rotating){ a+=W1*dt*sp; b+=W2*dt*sp; }
+    const g=toBox([0,-1,0],a,b);
+    sum=[sum[0]+g[0],sum[1]+g[1],sum[2]+g[2]]; n++;
+    // The cells are adherent — they stay where they attached. What changes is the
+    // direction from which gravity reaches them.
+  }
+
+  function drawArrow(p0,p1,col,wd,hd){
+    ctx.strokeStyle=col; ctx.fillStyle=col; ctx.lineWidth=wd*S;
+    ctx.beginPath(); ctx.moveTo(p0[0]*S,p0[1]*S); ctx.lineTo(p1[0]*S,p1[1]*S); ctx.stroke();
+    const ang=Math.atan2(p1[1]-p0[1],p1[0]-p0[0]), h=hd*S;
+    ctx.beginPath(); ctx.moveTo(p1[0]*S,p1[1]*S);
+    ctx.lineTo(p1[0]*S-h*Math.cos(ang-.42), p1[1]*S-h*Math.sin(ang-.42));
+    ctx.lineTo(p1[0]*S-h*Math.cos(ang+.42), p1[1]*S-h*Math.sin(ang+.42));
+    ctx.closePath(); ctx.fill();
+  }
+  function label(t,x,y,col,sz,w){
+    ctx.fillStyle=col; ctx.font=(w||500)+' '+(sz*S)+'px "Helvetica Neue", Helvetica, Arial, sans-serif'; ctx.fillText(t,x*S,y*S);
+  }
+  const P=(v)=>project(toWorld(v,a,b));
+
+  function drawRing(R,which){
+    const pts=[];
+    for(let i=0;i<=110;i++){
+      const t=i/110*Math.PI*2;
+      const loc = which==='outer'? [R*Math.cos(t),R*Math.sin(t),0] : [0,R*Math.cos(t),R*Math.sin(t)];
+      pts.push(project(which==='outer'? rotX(loc,a) : toWorld(loc,a,b)));
+    }
+    ctx.lineWidth=(which==='outer'?3.4:2.6)*S;
+    ctx.strokeStyle=which==='outer'?'rgba(74,84,94,.38)':'rgba(26,77,92,.38)';
+    ctx.beginPath(); pts.forEach((p,i)=> i?ctx.lineTo(p[0]*S,p[1]*S):ctx.moveTo(p[0]*S,p[1]*S));
+    ctx.stroke();
+  }
+
+  function drawSlide(){
+    // slide body
+    const corners=[[-SLIDE_W/2-0.05,SLIDE_Y,-SLIDE_D/2-0.05],[ SLIDE_W/2+0.05,SLIDE_Y,-SLIDE_D/2-0.05],
+                   [ SLIDE_W/2+0.05,SLIDE_Y, SLIDE_D/2+0.05],[-SLIDE_W/2-0.05,SLIDE_Y, SLIDE_D/2+0.05]]
+                  .map(P);
+    ctx.beginPath();
+    corners.forEach((p,i)=> i?ctx.lineTo(p[0]*S,p[1]*S):ctx.moveTo(p[0]*S,p[1]*S));
+    ctx.closePath();
+    ctx.fillStyle='rgba(255,255,255,.72)'; ctx.fill();
+    ctx.lineWidth=1.5*S; ctx.strokeStyle='rgba(74,84,94,.65)'; ctx.stroke();
+
+    const gB=toBox([0,-1,0],a,b);
+    wells.forEach(w=>{
+      const q=[[w.cx-WW/2,SLIDE_Y,w.cz-WH/2],[w.cx+WW/2,SLIDE_Y,w.cz-WH/2],
+               [w.cx+WW/2,SLIDE_Y,w.cz+WH/2],[w.cx-WW/2,SLIDE_Y,w.cz+WH/2]].map(P);
+      ctx.beginPath();
+      q.forEach((p,i)=> i?ctx.lineTo(p[0]*S,p[1]*S):ctx.moveTo(p[0]*S,p[1]*S));
+      ctx.closePath();
+      ctx.fillStyle='rgba(26,77,92,.10)'; ctx.fill();
+      ctx.lineWidth=1.15*S; ctx.strokeStyle='rgba(26,77,92,.55)'; ctx.stroke();
+
+      w.cells.forEach(c=>{
+        const p=P([w.cx+c.u, SLIDE_Y+0.008, w.cz+c.v]);
+        const rr=Math.max(2.6, CELL_R*300*6.2/(p[2]))*S;
+        ctx.beginPath(); ctx.arc(p[0]*S,p[1]*S,rr,0,Math.PI*2);
+        ctx.fillStyle='#1a4d5c'; ctx.fill();
+      });
+    });
+
+    // gravity as the slide feels it, drawn on the slide plane
+    const o=P([0,SLIDE_Y+0.05,0]);
+    const t=P([gB[0]*0.55, SLIDE_Y+0.05, gB[2]*0.55]);
+    drawArrow(o,t,'#a3552f',2.3,12);
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,cvs.width,cvs.height);
+
+    const ax=[[-2.4,0,0],[2.4,0,0]].map(project);
+    ctx.setLineDash([7*S,6*S]); ctx.lineWidth=1.6*S;
+    ctx.strokeStyle='#1a4d5c'; ctx.globalAlpha=.5;
+    ctx.beginPath(); ctx.moveTo(ax[0][0]*S,ax[0][1]*S); ctx.lineTo(ax[1][0]*S,ax[1][1]*S); ctx.stroke();
+    const iy=[[0,-1.8,0],[0,1.8,0]].map(v=>project(toWorld(v,a,0)));
+    ctx.beginPath(); ctx.moveTo(iy[0][0]*S,iy[0][1]*S); ctx.lineTo(iy[1][0]*S,iy[1][1]*S); ctx.stroke();
+    ctx.setLineDash([]); ctx.globalAlpha=1;
+
+    drawRing(1.95,'outer'); drawRing(1.5,'inner');
+
+    const vw=V.map(v=>toWorld(v,a,b)), vp=vw.map(project);
+    const polys=FACES.map(f=>{
+      const c=f.i.reduce((s,k)=>[s[0]+vw[k][0]/4,s[1]+vw[k][1]/4,s[2]+vw[k][2]/4],[0,0,0]);
+      const nr=norm(cross(sub(vw[f.i[1]],vw[f.i[0]]),sub(vw[f.i[2]],vw[f.i[0]])));
+      return {i:f.i, depth:project(c)[2], lit:Math.max(0,nr[0]*.35+nr[1]*.82+nr[2]*.45)};
+    }).sort((p,q)=>q.depth-p.depth);
+
+    polys.forEach((p,idx)=>{
+      const back=idx<3;
+      ctx.beginPath();
+      p.i.forEach((k,j)=>{const q=vp[k]; j?ctx.lineTo(q[0]*S,q[1]*S):ctx.moveTo(q[0]*S,q[1]*S);});
+      ctx.closePath();
+      const sh=248-p.lit*44;
+      ctx.fillStyle= back? 'rgba(240,237,231,.5)' : 'rgba('+sh+','+(sh-4)+','+(sh-11)+',.42)';
+      ctx.fill();
+      ctx.lineWidth=(back?1.1:2)*S;
+      ctx.strokeStyle= back? 'rgba(123,133,143,.5)' : '#2b333b';
+      ctx.stroke();
+      if(idx===2) drawSlide();     // slide sits between back and front faces
+    });
+
+    const gT=project([2.15,1.3,0]), gBm=project([2.15,-1.3,0]);
+    drawArrow(gT,gBm,'#a3552f',3.2,17);
+    label('g', gT[0]+16, gT[1]+34, '#a3552f', 22, 600);
+    label('1 g, always down', gBm[0]-58, gBm[1]+34, '#7b858f', 17);
+    label('8-well chamber slide of adherent cells', 62, 930, '#4a545e', 21, 600);
+
+    const mean=n? Math.hypot(sum[0]/n,sum[1]/n,sum[2]/n):1;
+    elAvg.firstChild.nodeValue=mean.toFixed(3)+' ';
+    barG.style.width=(mean*100).toFixed(1)+'%';
+    elState.textContent = rotating? 'direction sweeping' : 'fixed — one direction only';
+    elState.style.color = rotating? '' : '#a3552f';
+    elRev.firstChild.nodeValue=(a/(2*Math.PI)).toFixed(1)+' ';
+  }
+
+  function frame(ts){
+    if(!last) last=ts;
+    const dt=Math.min((ts-last)/1000,0.05); last=ts;
+    step(dt, parseFloat(speedI.value));
+    draw();
+    requestAnimationFrame(frame);
+  }
+
+  function setMode(run){
+    rotating=run;
+    bMode.classList.toggle('on',run);
+    bStat.classList.toggle('on',!run);
+  }
+  bMode.addEventListener('click',()=>setMode(true));
+  bStat.addEventListener('click',()=>setMode(false));
+  bRst.addEventListener('click',()=>{ sum=[0,0,0]; n=0; });
+
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    a=0.7;
+    b=1.9;
+    setMode(false);
+  }
+  fit(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

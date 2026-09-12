@@ -1,0 +1,139 @@
+---
+title: "People"
+subtitle: "Current members and alumni of the Ramanathan Lab."
+page-layout: full
+---
+
+::: {.people-photo}
+![](assets/lab-group.jpg){fig-alt="The Ramanathan Lab photographed together in the inStem auditorium in September 2026"}
+
+::: {.people-photo-caption}
+The lab, September 2026.
+:::
+:::
+
+::: {.people-intro}
+## Principal investigator
+
+### [Arvind Ramanathan](about.qmd)
+
+Principal Investigator · Ramanathan Lab
+:::
+
+## Current lab members
+
+::: {.people-grid}
+::: {.person}
+### Heera Lal
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Paulami Dey
+
+::: {.role}
+Postdoctoral fellow
+:::
+:::
+
+::: {.person}
+### Maroof Athar Hashmi
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Alok Barik
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Diksha Gogia
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Ashwin Venkateshvaran
+
+::: {.role}
+Project Research Scientist-I
+:::
+:::
+
+::: {.person}
+### Pushpita Saha
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Sikhasmita Dowari
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Ushasi Roy
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Yavanica S
+
+::: {.role}
+JRF
+:::
+:::
+
+::: {.person}
+### Sivaram B
+
+::: {.role}
+Research scholar · PhD
+:::
+:::
+
+::: {.person}
+### Harshal J
+
+::: {.role}
+Student intern
+:::
+:::
+:::
+
+## Alumni
+
+::: {.alumni-table-wrap}
+| Name | Role in the lab | Current position |
+|---|---|---|
+| **Akshay Hegde** | Postdoc | Researcher, National Dental Centre Singapore |
+| **Swarang S Pundlik** | PhD · Postdoc | Postdoctoral Fellow, BRIC-inStem |
+| **Sneha Muralidharan** | Postdoc | Associate Scientific Director, Biocon Bristol Myers Squibb Research & Development Center (BBRC) |
+| **Srujanika Rajalaxmi** | Project Associate | PhD student, UT Southwestern Medical Center |
+| **Sricharan Lakkaraju** | Project Associate | Doctoral student, Göttingen, Lower Saxony, Germany |
+| **Purvi S Thakur** | Project Associate | Research Technician, University of Dundee |
+| **Nistha Saini** | Project Associate | Program Manager, CloudxLab |
+| **Snehasudha S Sahoo** | Master's Thesis Student | PhD student, University of North Carolina at Chapel Hill |
+| **Vidhyu Lekha** | Master's Thesis Student | Project Delivery Associate, OptymEdge |
+| **Kamlesh Yadav** | Postdoc | Scientist, Laurus Bio |
+| **Vishakha Singh** | Project Associate | Head of Growth & Outreach, Enginuity |
+:::

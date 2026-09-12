@@ -1,0 +1,8 @@
+---
+title: "An integrative approach for the optical sequencing of single DNA molecules"
+date: 2004-01-01
+year: 2004
+period: "Earlier research"
+---
+
+Ramanathan A, Huff EJ, Lamers CC, Potamousis KD, Forrest DK, et al. *Analytical Biochemistry* 2004;330(2):227–241.

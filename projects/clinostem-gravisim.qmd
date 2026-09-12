@@ -1,0 +1,20 @@
+---
+title: "Gravisim — ground-based microgravity research"
+subtitle: "Space and microgravity biology"
+status: "Patent filed"
+---
+
+Spaceflight access is necessarily limited. Gravisim provides a ground-based platform for controlled,
+repeatable microgravity studies with cells and bioengineered tissues, allowing observations from
+flight to be investigated experimentally in the laboratory.
+
+## Research programme
+
+The platform supports studies of cellular adaptation, tissue function and recovery under simulated
+microgravity. We use it alongside our spaceflight programme to carry mission-derived
+questions with experiments that can be repeated and extended on the ground.
+
+A patent has been filed for the Gravisim microgravity system. Technical construction, validation and
+performance details are therefore not disclosed on this website.
+
+[Explore the space and microgravity programme →](../research/space.qmd)

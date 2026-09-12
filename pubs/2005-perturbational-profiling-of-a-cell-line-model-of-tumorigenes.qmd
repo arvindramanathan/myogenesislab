@@ -1,0 +1,9 @@
+---
+title: "Perturbational profiling of a cell-line model of tumorigenesis by using metabolic measurements"
+date: 2005-01-01
+year: 2005
+period: "Earlier research"
+categories: ["Metabolomics"]
+---
+
+Ramanathan A, Wang C, Schreiber SL. *PNAS* 2005;102(17):5992–5997.

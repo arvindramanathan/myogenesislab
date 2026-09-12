@@ -1,0 +1,13 @@
+---
+title: "Exposome phytochemicals"
+subtitle: "Muscle regeneration, aging and senescence"
+---
+
+Environmental exposures can alter metabolic state and tissue function long before disease becomes
+clinically apparent. We study selected phytochemicals as defined components of the exposome and ask
+how they influence cellular stress responses, metabolism and muscle repair.
+
+## Current research
+
+Current studies use the identifier **phytochemical K01**. Its chemical identity, mechanistic claims
+and development details are not disclosed while intellectual-property work is in progress.
